@@ -17,7 +17,7 @@
 ## Diseño OO
 
 > **Diagrama UML de clases:**
->![Diagrama de Clases de las ventas en linea](/assets/iteracion1_VentaProductosLinea.png)
+>![Diagrama de Clases de las ventas en linea](/out/docs/Iteracion1/DiagramaClases_V1/iteracion1_VentaProductosLinea.png)
 >
 > Descripción del diagrama UML y los componentes incluidos en esta iteración.
 
