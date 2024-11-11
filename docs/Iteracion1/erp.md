@@ -62,12 +62,6 @@ El patrón Decorator se utilizará para aplicar descuentos a los productos. Las 
 - **DescuentoPorcentajeDecorator**: Implementará un descuento basado en un porcentaje.
 - **DescuentoFijoDecorator**: Implementará un descuento basado en un valor fijo.
 
-### Diagrama UML de Clases
-
-A continuación se muestra el diagrama UML de clases que ilustra la implementación de estos patrones de diseño:
-
-![Diagrama de Clases de las ventas en linea](/out/docs/Iteracion1/DiagramaClases_V1/iteracion1_VentaProductosLinea.png)
-
 ### Implementación Detallada
 
 1. **Gestión de Inventario**:
