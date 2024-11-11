@@ -125,28 +125,15 @@ Pedido --> Producto
 Pedido --> Descuento
 Pedido --> ContextoPago
 ContextoPago --> EstrategiaPago
-EstrategiaPago <|.. PagoTarjetaCredito
-EstrategiaPago <|.. PagoTarjetaDebito
-EstrategiaPago <|.. PagoTransferenciaBancaria
 Pedido --> Observador
-Observador <|.. NotificacionCorreo
-Sujeto <|.. Pedido
 
 ' Relación de Cliente y Administrador con SistemaFacade (Facade opcional)
 Cliente --> SistemaFacade
 Administrador --> SistemaFacade
-
-@enduml
-Observador <|.. NotificacionCorreo
-Sujeto <|.. Pedido
 
 ' Decorator Pattern
 Descuento <|-- DescuentoBase
 DescuentoBase <|-- DescuentoPorcentajeDecorator
 DescuentoBase <|-- DescuentoFijoDecorator
-
-' Relación de Cliente y Administrador con SistemaFacade (Facade opcional)
-Cliente --> SistemaFacade
-Administrador --> SistemaFacade
 
 @enduml
