@@ -102,16 +102,26 @@ El patrón Decorator se utilizará para aplicar descuentos a los productos. Las 
 
 ## Arquitectura de software
 
-**Tipo de aplicación:**
-
-¿Será esta una aplicación web / de escritorio / móvil *(todas o algún otro tipo)*?
-
-**Arquitectura:**
-
-¿Se ajustaría a la arquitectura de software Cliente-Servidor?
-
-**Tecnologías:**
-
-¿Qué lenguajes de programación, frameworks, bases de datos,... se utilizarán para desarrollar e implementar el software?
-
+> **Tipo de aplicación:**
+>
+> El tipo de aplicación a desarrollar será una aplicación web de escritorio que actuará de manera Responsive para adaptar la interfaz de usuario a dispositivos móviles.
+>
+> **Arquitectura:**
+>
+> La arquitectura de la aplicación se ajustará a una arquitectura cliente-servidor.
+Para la capa de presentación de la aplicación se utilizará MVC (Modelo Vista Controlador). Esta arquitectura nos permitirá dividir las responsabilidades de la aplicación en diferentes capas:
+> + Modelo
+> + Vista
+> + Persistencia
+> + Controladores
+> + Servicios
+> + Repositorios
+>
+> **Tecnologías:**
+>
+> El Stack para el desarrollo del integrador es el siguiente:
+> + Lenguaje de programación: Java
+> + Base de Datos: PostreSQL
+> + Framework: Spring Boot
+> + Persistencia: Jakarta Persistence
 ---
