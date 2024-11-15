@@ -108,10 +108,10 @@ El patrón Decorator se utilizará para aplicar descuentos a los productos. Las 
 >
 > **Arquitectura:**
 >
-> La arquitectura de la aplicación se ajustará a una arquitectura cliente-servidor.
-Para la capa de presentación de la aplicación se utilizará MVC (Modelo Vista Controlador). Esta arquitectura nos permitirá dividir las responsabilidades de la aplicación en diferentes capas:
-> + Modelo
+> Al ser una aplicación web, la arquitectura se ajustará a la arquitectura cliente-servidor.
+Para la arquitectura de desarollo del sistema, se utilizará una arquitectura por capas permitiendo dividir las responsabilidades de la aplicación en diferentes capas:
 > + Vista
+> + Modelo
 > + Persistencia
 > + Controladores
 > + Servicios
@@ -120,6 +120,7 @@ Para la capa de presentación de la aplicación se utilizará MVC (Modelo Vista 
 > **Tecnologías:**
 >
 > El Stack para el desarrollo del integrador es el siguiente:
+> + IDEs y editores de texto: VS Code y Apache NetBeans
 > + Lenguaje de programación: Java
 > + Base de Datos: PostreSQL
 > + Framework: Spring Boot
