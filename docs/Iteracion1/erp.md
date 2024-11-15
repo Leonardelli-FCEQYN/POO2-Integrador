@@ -47,14 +47,24 @@
 
 > **Tipo de aplicación:**
 >
-> ¿Será esta una aplicación web / de escritorio / móvil *(todas o algún otro tipo)*?
+> El tipo de aplicación a desarrollar será una aplicación web de escritorio que actuará de manera Responsive para adaptar la interfaz de usuario a dispositivos móviles.
 >
 > **Arquitectura:**
 >
-> ¿Se ajustaría a la arquitectura de software Cliente-Servidor?
+> La arquitectura de la aplicación se ajustará a una arquitectura cliente-servidor.
+Para la capa de presentación de la aplicación se utilizará MVC (Modelo Vista Controlador). Esta arquitectura nos permitirá dividir las responsabilidades de la aplicación en diferentes capas:
+> + Modelo
+> + Vista
+> + Persistencia
+> + Controladores
+> + Servicios
+> + Repositorios
 >
 > **Tecnologías:**
 >
-> ¿Qué lenguajes de programación, frameworks, bases de datos,... se utilizarán para desarrollar e implementar el software?
-
+> El Stack para el desarrollo del integrador es el siguiente:
+> + Lenguaje de programación: Java
+> + Base de Datos: PostreSQL
+> + Framework: Spring Boot
+> + Persistencia: Jakarta Persistence
 ---
