@@ -6,11 +6,22 @@
 > **Descripción de las tareas asignadas a cada miembro:**
 >
 > - **Leonardelli Lisandro:**
+>   - Creación del repositorio y estructura inicial del proyecto
+>   - Diseño del diagrama de clases
 > - **Castillo Mazo Andrés Luciano:**
+>   - Implementación de las Clases del modelo
 > - **Amarilla Espindola Aldo Wilfrido:**
+>   - Diseño de Wireframes
+>   - Implementación de los Wireframes con el Framework Spring Boot
 > - **Gimenez Iván Benjamin:**
-> - **Sosa Ayelén:** 
+>   - Implementación de las Clases del modelo
+> - **Sosa Ayelén:**
+>   - Diseño del diagrama de clases
+>   - Diseño de Wireframes
 > - **Albornoz Franco:**
+>   - Implementar la persistencia con la base de datos
+>   - Implementar los controladores de persistencia correspondientes
+>   - Armar la arquitectura MVC (estructurado de carpetas del proyecto)
 
 ---
 
