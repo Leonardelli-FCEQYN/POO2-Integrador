@@ -124,6 +124,35 @@
 > - **Curso alternativo:**
 >   1. Si no hay ventas registradas, el sistema muestra un mensaje indicando que no hay ventas en el historial.
 
+> **Caso de uso 9:** Registro de nuevos clientes.
+> - **Actores:** Cliente
+> - **Curso típico de eventos:**
+>   1. El cliente accede a la página de registro.
+>   2. El cliente proporciona su nombre, correo electrónico y contraseña.
+>   3. El sistema verifica que el correo electrónico no esté ya registrado.
+>   4. El sistema guarda los datos del cliente y envía un correo de confirmación.
+> - **Curso alternativo:**
+>   1. Si el correo electrónico ya está registrado, el sistema muestra un mensaje de error y solicita al cliente usar otro correo.
+
+> **Caso de uso 10:** Inicio de sesión de clientes.
+> - **Actores:** Cliente
+> - **Curso típico de eventos:**
+>   1. El cliente accede a la página de inicio de sesión.
+>   2. El cliente proporciona su correo electrónico y contraseña.
+>   3. El sistema verifica las credenciales y permite el acceso si son correctas.
+>   4. El cliente accede a su cuenta y puede realizar compras.
+> - **Curso alternativo:**
+>   1. Si las credenciales son incorrectas, el sistema muestra un mensaje de error y permite al cliente intentar nuevamente.
+
+> **Caso de uso 11:** Recuperación de contraseña.
+> - **Actores:** Cliente
+> - **Curso típico de eventos:**
+>   1. El cliente accede a la página de recuperación de contraseña.
+>   2. El cliente proporciona su correo electrónico.
+>   3. El sistema envía un enlace de recuperación al correo electrónico del cliente.
+>   4. El cliente utiliza el enlace para restablecer su contraseña.
+> - **Curso alternativo:**
+>   1. Si el correo electrónico no está registrado, el sistema muestra un mensaje de error y solicita al cliente verificar su correo.
 
 ---
 
@@ -138,7 +167,10 @@
 > 5. **Historia de usuario 5:** Como administrador, quiero agregar nuevos productos al inventario con su descripción, precio y cantidad para mantener el catálogo actualizado.
 > 6. **Historia de usuario 6:** Como administrador, quiero modificar la cantidad de productos en el inventario cuando se realiza una venta para mantener un control preciso del inventario.
 > 7. **Historia de usuario 7:** Como administrador, quiero aplicar descuentos automáticos a ciertos productos o paquetes para ofrecer promociones atractivas a los clientes.
-> 9. **Historia de usuario 8:** Como administrador, quiero acceder a un historial de ventas y detalles de cada pedido para analizar el rendimiento de las ventas y tomar decisiones informadas.
+> 8. **Historia de usuario 8:** Como administrador, quiero acceder a un historial de ventas y detalles de cada pedido para analizar el rendimiento de las ventas y tomar decisiones informadas.
+> 9. **Historia de usuario 9:** Como cliente, quiero registrarme en el sistema con mis datos personales para poder realizar compras y recibir notificaciones.
+> 10. **Historia de usuario 10:** Como cliente, quiero iniciar sesión en el sistema con mi correo electrónico y contraseña para acceder a mi cuenta y realizar compras.
+> 11. **Historia de usuario 11:** Como cliente, quiero recuperar mi contraseña en caso de olvidarla para poder acceder a mi cuenta nuevamente.
 
 ---
 
@@ -146,9 +178,16 @@
 
 > **Lista de tareas específicas:**
 >
-> - **Tarea 1:** Descripción de la tarea.
-> - **Tarea 2:** Descripción de la tarea.
-> - **Tarea 3:** Descripción de la tarea.
-> - **Tarea 4:** Descripción de la tarea.
+> - **Tarea 1:** Implementar la visualización de productos ecológicos disponibles.
+> - **Tarea 2:** Implementar la búsqueda de productos por categoría o palabras clave.
+> - **Tarea 3:** Implementar la visualización del precio total incluyendo descuentos.
+> - **Tarea 4:** Implementar la selección de método de pago.
+> - **Tarea 5:** Implementar la funcionalidad para agregar nuevos productos al inventario.
+> - **Tarea 6:** Implementar la modificación del inventario tras una venta.
+> - **Tarea 7:** Implementar la aplicación de descuentos automáticos en productos.
+> - **Tarea 8:** Implementar el acceso al historial de ventas y detalles de pedidos.
+> - **Tarea 9:** Implementar el registro de nuevos clientes.
+> - **Tarea 10:** Implementar el inicio de sesión de clientes.
+> - **Tarea 11:** Implementar la recuperación de contraseña.
 
 ---

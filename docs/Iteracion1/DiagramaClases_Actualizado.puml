@@ -85,11 +85,6 @@ class HistorialVentas {
     +exportarHistorial(formato: String): void
 }
 
-' Clase RecomendadorProductos
-class RecomendadorProductos {
-    +generarRecomendaciones(cliente: Cliente): List<Producto>
-}
-
 ' Contexto y estrategias de pago (Patrón Strategy)
 class ContextoPago {
     -estrategia: EstrategiaPago

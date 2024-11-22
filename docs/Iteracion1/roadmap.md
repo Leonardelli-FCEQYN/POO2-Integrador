@@ -128,3 +128,50 @@
 
 ---
 
+## Historia de Usuario 9: Registro de nuevos clientes
+
+**Como** Cliente,  
+**Quiero** Registrarme en el sistema con mis datos personales,  
+**Para** Poder realizar compras y recibir notificaciones.
+
+### Criterios de Aceptación
+- [ ] El cliente puede registrarse proporcionando nombre, correo electrónico y contraseña.
+- [ ] El sistema verifica que el correo electrónico no esté ya registrado.
+- [ ] El cliente recibe un correo de confirmación tras registrarse.
+
+### Notas
+- [Nota adicional o contexto]
+
+---
+
+## Historia de Usuario 10: Inicio de sesión de clientes
+
+**Como** Cliente,  
+**Quiero** Iniciar sesión en el sistema con mi correo electrónico y contraseña,  
+**Para** Acceder a mi cuenta y realizar compras.
+
+### Criterios de Aceptación
+- [ ] El cliente puede iniciar sesión proporcionando correo electrónico y contraseña.
+- [ ] El sistema verifica las credenciales y permite el acceso si son correctas.
+- [ ] El cliente recibe un mensaje de error si las credenciales son incorrectas.
+
+### Notas
+- [Nota adicional o contexto]
+
+---
+
+## Historia de Usuario 10: Recuperación de contraseña
+
+**Como** Cliente,  
+**Quiero** Recuperar mi contraseña en caso de olvidarla,  
+**Para** Poder acceder a mi cuenta nuevamente.
+
+### Criterios de Aceptación
+- [ ] El cliente puede solicitar la recuperación de contraseña proporcionando su correo electrónico.
+- [ ] El sistema envía un enlace de recuperación al correo electrónico del cliente.
+- [ ] El cliente puede restablecer su contraseña utilizando el enlace proporcionado.
+
+### Notas
+- [Nota adicional o contexto]
+
+---
