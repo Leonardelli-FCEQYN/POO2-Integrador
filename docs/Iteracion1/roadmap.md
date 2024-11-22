@@ -112,23 +112,7 @@
 
 ---
 
-## Historia de Usuario 8: Confirmación de compra por correo electrónico
-
-**Como** Cliente,  
-**Quiero** Recibir una confirmación de compra por correo electrónico con el detalle de mi pedido,  
-**Para** Tener un comprobante y detalle de mi compra.
-
-### Criterios de Aceptación
-- [ ] El cliente recibe un correo de confirmación inmediatamente después de finalizar la compra
-- [ ] El correo incluye los detalles del pedido (productos, cantidades, precios, y total).
-- [ ] El correo de confirmación contiene información de contacto para asistencia en caso de problemas con el pedido.
-
-### Notas
-- [Nota adicional o contexto]
-
----
-
-## Historia de Usuario 9: Acceso al historial de ventas y detalles de pedidos
+## Historia de Usuario 8: Acceso al historial de ventas y detalles de pedidos
 
 **Como** Administrador,  
 **Quiero** Acceder a un historial de ventas y detalles de cada pedido,  
@@ -144,18 +128,3 @@
 
 ---
 
-## Historia de Usuario 10: Recomendaciones de productos basadas en compras anteriores
-
-**Como** Cliente,  
-**Quiero** Ver recomendaciones de productos basadas en mis compras anteriores,  
-**Para** Descubrir productos que puedan interesarme y mejorar mi experiencia de compra.
-
-### Criterios de Aceptación
-- [ ] El sistema muestra al menos tres productos recomendados en base a las compras anteriores del cliente.
-- [ ] Las recomendaciones son actualizadas dinámicamente después de cada compra para reflejar las preferencias del cliente.
-- [ ] El cliente puede acceder a la sección de recomendaciones desde la página principal o desde su cuenta.
-
-### Notas
-- [Nota adicional o contexto]
-
----
