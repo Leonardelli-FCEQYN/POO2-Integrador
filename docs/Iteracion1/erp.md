@@ -24,65 +24,8 @@ Los clientes potenciales incluyen consumidores interesados en productos ecológi
 
 La solución propuesta es un sistema de software que permitirá la venta de productos ecológicos en línea. El sistema gestionará el inventario, calculará precios con descuentos y se integrará con múltiples métodos de pago. Esto facilitará a los usuarios la compra y venta de productos ecológicos de manera eficiente y segura.
 
-### Planificación Detallada
-
-Para llevar a cabo la implementación de la solución propuesta, se utilizarán varios patrones de diseño que facilitarán la escalabilidad y el mantenimiento del sistema. A continuación, se detallan los patrones de diseño que se utilizarán y cómo se implementarán:
-
-#### Strategy
-
-El patrón Strategy se utilizará para definir diferentes métodos de pago. Las siguientes clases implementarán este patrón:
-
-- **EstrategiaPago**: Interfaz que definirá el método `pagar(monto: double): void`.
-- **PagoTarjetaCredito**: Implementará la interfaz `EstrategiaPago` para pagos con tarjeta de crédito.
-- **PagoTarjetaDebito**: Implementará la interfaz `EstrategiaPago` para pagos con tarjeta de débito.
-- **PagoTransferenciaBancaria**: Implementará la interfaz `EstrategiaPago` para pagos con transferencia bancaria.
-- **ContextoPago**: Clase que utilizará una estrategia de pago para procesar el pago.
-
-#### Observer
-
-El patrón Observer se utilizará para notificar a los observadores sobre cambios en el estado de un pedido. Las siguientes clases implementarán este patrón:
-
-- **Observador**: Interfaz que definirá el método `actualizar(pedido: Pedido): void`.
-- **Sujeto**: Interfaz que definirá los métodos `registrarObservador(observador: Observador): void`, `eliminarObservador(observador: Observador): void` y `notificarObservadores(): void`.
-- **Pedido**: Implementará la interfaz `Sujeto` y notificará a los observadores cuando haya cambios en el pedido.
-- **NotificacionCorreo**: Implementará la interfaz `Observador` para enviar notificaciones por correo electrónico cuando haya cambios en el pedido.
-
-#### Facade (Opcional)
-
-El patrón Facade se utilizará opcionalmente para simplificar la interacción con el sistema. La siguiente clase implementará este patrón:
-
-- **SistemaFacade**: Proporcionará métodos simplificados para realizar operaciones comunes, como realizar una compra o gestionar productos.
-
-#### Decorator
-
-El patrón Decorator se utilizará para aplicar descuentos a los productos. Las siguientes clases implementarán este patrón:
-
-- **Descuento**: Clase base para los descuentos.
-- **DescuentoBase**: Clase base para los decoradores de descuento.
-- **DescuentoPorcentajeDecorator**: Implementará un descuento basado en un porcentaje.
-- **DescuentoFijoDecorator**: Implementará un descuento basado en un valor fijo.
-
-### Implementación Detallada
-
-1. **Gestión de Inventario**:
-   - Implementar la clase `Administrador` con métodos para agregar, actualizar y eliminar productos del inventario (`agregarProducto`, `actualizarProducto`, `eliminarProducto`).
-   - Implementar la clase `Producto` con atributos como `id`, `nombre`, `descripcion`, `precio` y `stock` para gestionar la información del producto.
-
-2. **Cálculo de Precios con Descuentos**:
-   - Utilizar el patrón Decorator para aplicar descuentos a los productos. Implementar la clase `Descuento` y sus decoradores (`DescuentoPorcentajeDecorator` y `DescuentoFijoDecorator`) para permitir aplicar diferentes tipos de descuentos a los productos.
-
-3. **Integración con Múltiples Métodos de Pago**:
-   - Utilizar el patrón Strategy para definir diferentes métodos de pago. Implementar la interfaz `EstrategiaPago` y sus implementaciones (`PagoTarjetaCredito`, `PagoTarjetaDebito`, `PagoTransferenciaBancaria`) para procesar pagos utilizando diferentes métodos.
-   - Implementar la clase `ContextoPago` para seleccionar y utilizar la estrategia de pago adecuada.
-
-4. **Notificaciones de Pedido**:
-   - Utilizar el patrón Observer para notificar a los observadores sobre cambios en el estado de un pedido. Implementar la clase `Pedido` que implementará la interfaz `Sujeto` y notificará a los observadores (como `NotificacionCorreo`) cuando haya cambios en el pedido.
-
-5. **Simplificación de la Interacción con el Sistema**:
-   - Utilizar el patrón Facade opcionalmente para simplificar la interacción con el sistema. Implementar la clase `SistemaFacade` que proporcionará métodos simplificados para realizar operaciones comunes, como realizar una compra o gestionar productos.
-
 ---
-
+S
 ## Requisitos
 
 **Historias de usuario**
