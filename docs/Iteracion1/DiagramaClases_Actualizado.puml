@@ -7,111 +7,120 @@ enum TipoPago {
     TRANSFERENCIA_BANCARIA
 }
 
-' Interfaces para patrón Strategy
+' Interfaces para el patrón Strategy
 interface EstrategiaPago {
-    +pagar(monto: double): void
+    + pagar(monto: double): void
 }
 
 ' Clases abstractas
 abstract class Usuario {
-    -id: Long
-    -nombre: String
-    -correo: String
-    +getId(): Long
-    +getNombre(): String
-    +getCorreo(): String
+    - id: Long
+    - nombre: String
+    - correo: String
+    - contraseña: String
+    + getId(): Long
+    + getNombre(): String
+    + getCorreo(): String
+    + iniciarSesion(correo: String, contraseña: String): boolean
+    + recuperarContraseña(correo: String): void
 }
 
 ' Clases concretas de Usuario
 class Cliente extends Usuario {
-    +buscarProducto(palabraClave: String, categoria: String): List<Producto>
-    +agregarProductoAlCarrito(producto: Producto): void
-    +eliminarProductoDelCarrito(producto: Producto): void
-    +realizarCompra(): Pedido
-    +verTotalConDescuentos(): double
+    + buscarProducto(palabraClave: String, categoria: String): List<Producto>
+    + escogerProducto(producto: Producto): void
+    + agregarProductoAlCarrito(producto: Producto): void
+    + eliminarProductoDelCarrito(producto: Producto): void
+    + realizarCompra(): Pedido
+    + verTotalConDescuentos(): double
 }
 
 class Administrador extends Usuario {
-    +agregarProducto(producto: Producto): void
-    +actualizarProducto(producto: Producto): void
-    +consultarHistorialVentas(): List<Pedido>
+    + agregarProducto(producto: Producto): void
+    + actualizarProducto(producto: Producto): void
+    + consultarHistorialVentas(): List<Pedido>
+    + aplicarDescuentosAutomaticos(productos: List<Producto>): void
 }
 
-' Clase Producto (Parte del patrón Composite)
+' Clase Producto
 class Producto {
-    -id: Long
-    -nombre: String
-    -descripcion: String
-    -precio: double
-    -stock: int
-    -categoria: String
-    -palabrasClave: List<String>
-    +getId(): Long
-    +getNombre(): String
-    +getDescripcion(): String
-    +getPrecio(): double
-    +getStock(): int
-    +setStock(stock: int): void
-    +esDisponible(): boolean
+    - id: Long
+    - nombre: String
+    - descripcion: String
+    - precio: double
+    - stock: int
+    - categoria: String
+    - palabrasClave: List<String>
+    + getId(): Long
+    + getNombre(): String
+    + getDescripcion(): String
+    + getPrecio(): double
+    + getStock(): int
+    + setStock(stock: int): void
+    + esDisponible(): boolean
 }
 
-' Clase Pedido (Parte del patrón Composite)
+' Clase Pedido
 class Pedido {
-    -id: Long
-    -productos: List<Producto>
-    -precioTotal: double
-    -descuentos: List<Descuento>
-    +getId(): Long
-    +getProductos(): List<Producto>
-    +getPrecioTotal(): double
-    +calcularPrecioTotal(): double
-    +agregarDescuento(descuento: Descuento): void
+    - id: Long
+    - productos: List<Producto>
+    - precioTotal: double
+    - descuentos: List<Descuento>
+    - estado: String
+    + getId(): Long
+    + getProductos(): List<Producto>
+    + getPrecioTotal(): double
+    + calcularPrecioTotal(): double
+    + agregarDescuento(descuento: Descuento): void
+    + getEstado(): String
+    + setEstado(estado: String): void
 }
 
 ' Clase Descuento
 class Descuento {
-    -id: Long
-    -descripcion: String
-    -valor: double
-    +getId(): Long
-    +getDescripcion(): String
-    +getValor(): double
+    - id: Long
+    - descripcion: String
+    - valor: double
+    + getId(): Long
+    + getDescripcion(): String
+    + getValor(): double
 }
 
-' Clase HistorialVentas (Singleton/Repository)
+' Clase HistorialVentas
 class HistorialVentas {
-    -ventas: List<Pedido>
-    +filtrarPorFecha(fechaInicio: Date, fechaFin: Date): List<Pedido>
-    +exportarHistorial(formato: String): void
+    - ventas: List<Pedido>
+    + filtrarPorFecha(fechaInicio: Date, fechaFin: Date): List<Pedido>
+    + exportarHistorial(formato: String): void
 }
 
-' Contexto y estrategias de pago (Patrón Strategy)
+' Clases para el contexto y estrategias de pago
 class ContextoPago {
-    -estrategia: EstrategiaPago
-    +setEstrategiaPago(estrategia: EstrategiaPago): void
-    +pagar(monto: double): void
+    - estrategia: EstrategiaPago
+    + setEstrategiaPago(estrategia: EstrategiaPago): void
+    + pagar(monto: double): void
 }
 
 class PagoTarjetaCredito implements EstrategiaPago {
-    +pagar(monto: double): void
+    + pagar(monto: double): void
 }
 
 class PagoTarjetaDebito implements EstrategiaPago {
-    +pagar(monto: double): void
+    + pagar(monto: double): void
 }
 
 class PagoTransferenciaBancaria implements EstrategiaPago {
-    +pagar(monto: double): void
+    + pagar(monto: double): void
 }
 
 ' Relaciones de clases
-Cliente --> Pedido
-Administrador --> Producto
-Pedido --> Producto
-Pedido --> Descuento
-Administrador --> HistorialVentas
-Cliente --> RecomendadorProductos
-Pedido --> ContextoPago
-ContextoPago --> EstrategiaPago
+Cliente --> Producto : "selecciona"
+Cliente --> Pedido : "realiza"
+Pedido --> Producto : "contiene"
+Pedido --> HistorialVentas : "registrado en"
+Administrador --> Producto : "gestiona"
+Pedido --> Descuento : "aplica"
+Administrador --> HistorialVentas : "consulta"
+Pedido --> ContextoPago : "usa"
+ContextoPago --> EstrategiaPago : "aplica"
 
 @enduml
