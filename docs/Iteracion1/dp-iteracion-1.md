@@ -113,17 +113,7 @@
 > - **Curso alternativo:**
 >   1. Si las condiciones del descuento no se cumplen, el sistema no aplica el descuento y notifica al administrador.
 
-> **Caso de uso 8:** Confirmación de compra por correo electrónico.
-> - **Actores:** Cliente
-> - **Curso típico de eventos:**
->   1. El cliente completa una compra.
->   2. El sistema envía automáticamente un correo de confirmación al cliente.
->   3. El correo incluye los detalles del pedido (productos, cantidades, precios, y total).
->   4. El cliente recibe el correo de confirmación inmediatamente después de finalizar la compra.
-> - **Curso alternativo:**
->   1. Si el correo no se puede enviar, el sistema notifica al cliente y al administrador para que tomen las medidas necesarias.
-
-> **Caso de uso 9:** Acceso al historial de ventas y detalles de pedidos.
+> **Caso de uso 8:** Acceso al historial de ventas y detalles de pedidos.
 > - **Actores:** Administrador
 > - **Curso típico de eventos:**
 >   1. El administrador accede al panel de administración.
@@ -134,15 +124,6 @@
 > - **Curso alternativo:**
 >   1. Si no hay ventas registradas, el sistema muestra un mensaje indicando que no hay ventas en el historial.
 
-> **Caso de uso 10:** Recomendaciones de productos basadas en compras anteriores.
-> - **Actores:** Cliente
-> - **Curso típico de eventos:**
->   1. El cliente accede a su cuenta o a la página principal.
->   2. El sistema muestra al menos tres productos recomendados en base a las compras anteriores del cliente.
->   3. Las recomendaciones se actualizan dinámicamente después de cada compra para reflejar las preferencias del cliente.
->   4. El cliente puede navegar por las recomendaciones y seleccionar productos para ver más detalles.
-> - **Curso alternativo:**
->   1. Si el cliente no tiene compras anteriores, el sistema muestra productos populares o destacados como recomendaciones.
 
 ---
 
@@ -157,9 +138,7 @@
 > 5. **Historia de usuario 5:** Como administrador, quiero agregar nuevos productos al inventario con su descripción, precio y cantidad para mantener el catálogo actualizado.
 > 6. **Historia de usuario 6:** Como administrador, quiero modificar la cantidad de productos en el inventario cuando se realiza una venta para mantener un control preciso del inventario.
 > 7. **Historia de usuario 7:** Como administrador, quiero aplicar descuentos automáticos a ciertos productos o paquetes para ofrecer promociones atractivas a los clientes.
-> 8. **Historia de usuario 8:** Como cliente, quiero recibir una confirmación de compra por correo electrónico con el detalle de mi pedido para tener un comprobante y detalle de mi compra.
-> 9. **Historia de usuario 9:** Como administrador, quiero acceder a un historial de ventas y detalles de cada pedido para analizar el rendimiento de las ventas y tomar decisiones informadas.
-> 10. **Historia de usuario 10:** Como cliente, quiero ver recomendaciones de productos basadas en mis compras anteriores para descubrir productos que puedan interesarme y mejorar mi experiencia de compra.
+> 9. **Historia de usuario 8:** Como administrador, quiero acceder a un historial de ventas y detalles de cada pedido para analizar el rendimiento de las ventas y tomar decisiones informadas.
 
 ---
 

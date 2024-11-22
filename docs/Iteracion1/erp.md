@@ -94,9 +94,7 @@ El patrón Decorator se utilizará para aplicar descuentos a los productos. Las 
 5. **Como** Administrador, **quiero** agregar nuevos productos al inventario con su descripción, precio y cantidad, **para** mantener el catálogo actualizado.
 6. **Como** Administrador, **quiero** modificar la cantidad de productos en el inventario cuando se realiza una venta, **para** mantener un control preciso del inventario.
 7. **Como** Administrador, **quiero** aplicar descuentos automáticos a ciertos productos o paquetes, **para** ofrecer promociones atractivas a los clientes.
-8. **Como** Cliente, **quiero** recibir una confirmación de compra por correo electrónico con el detalle de mi pedido, **para** tener un comprobante y detalle de mi compra.
-9. **Como** Administrador, **quiero** acceder a un historial de ventas y detalles de cada pedido, **para** analizar el rendimiento de las ventas y tomar decisiones informadas.
-10. **Como** Cliente, **quiero** ver recomendaciones de productos basadas en mis compras anteriores, **para** descubrir productos que puedan interesarme y mejorar mi experiencia de compra.
+8. **Como** Administrador, **quiero** acceder a un historial de ventas y detalles de cada pedido, **para** analizar el rendimiento de las ventas y tomar decisiones informadas.
 
 ---
 
