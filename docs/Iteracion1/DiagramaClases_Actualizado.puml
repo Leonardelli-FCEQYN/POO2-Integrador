@@ -1,0 +1,122 @@
+@startuml iteracion1_VentaProductosLinea
+
+' Enumeraciones
+enum TipoPago {
+    TARJETA_CREDITO
+    TARJETA_DEBITO
+    TRANSFERENCIA_BANCARIA
+}
+
+' Interfaces para patrón Strategy
+interface EstrategiaPago {
+    +pagar(monto: double): void
+}
+
+' Clases abstractas
+abstract class Usuario {
+    -id: Long
+    -nombre: String
+    -correo: String
+    +getId(): Long
+    +getNombre(): String
+    +getCorreo(): String
+}
+
+' Clases concretas de Usuario
+class Cliente extends Usuario {
+    +buscarProducto(palabraClave: String, categoria: String): List<Producto>
+    +agregarProductoAlCarrito(producto: Producto): void
+    +eliminarProductoDelCarrito(producto: Producto): void
+    +realizarCompra(): Pedido
+    +verTotalConDescuentos(): double
+}
+
+class Administrador extends Usuario {
+    +agregarProducto(producto: Producto): void
+    +actualizarProducto(producto: Producto): void
+    +consultarHistorialVentas(): List<Pedido>
+}
+
+' Clase Producto (Parte del patrón Composite)
+class Producto {
+    -id: Long
+    -nombre: String
+    -descripcion: String
+    -precio: double
+    -stock: int
+    -categoria: String
+    -palabrasClave: List<String>
+    +getId(): Long
+    +getNombre(): String
+    +getDescripcion(): String
+    +getPrecio(): double
+    +getStock(): int
+    +setStock(stock: int): void
+    +esDisponible(): boolean
+}
+
+' Clase Pedido (Parte del patrón Composite)
+class Pedido {
+    -id: Long
+    -productos: List<Producto>
+    -precioTotal: double
+    -descuentos: List<Descuento>
+    +getId(): Long
+    +getProductos(): List<Producto>
+    +getPrecioTotal(): double
+    +calcularPrecioTotal(): double
+    +agregarDescuento(descuento: Descuento): void
+}
+
+' Clase Descuento
+class Descuento {
+    -id: Long
+    -descripcion: String
+    -valor: double
+    +getId(): Long
+    +getDescripcion(): String
+    +getValor(): double
+}
+
+' Clase HistorialVentas (Singleton/Repository)
+class HistorialVentas {
+    -ventas: List<Pedido>
+    +filtrarPorFecha(fechaInicio: Date, fechaFin: Date): List<Pedido>
+    +exportarHistorial(formato: String): void
+}
+
+' Clase RecomendadorProductos
+class RecomendadorProductos {
+    +generarRecomendaciones(cliente: Cliente): List<Producto>
+}
+
+' Contexto y estrategias de pago (Patrón Strategy)
+class ContextoPago {
+    -estrategia: EstrategiaPago
+    +setEstrategiaPago(estrategia: EstrategiaPago): void
+    +pagar(monto: double): void
+}
+
+class PagoTarjetaCredito implements EstrategiaPago {
+    +pagar(monto: double): void
+}
+
+class PagoTarjetaDebito implements EstrategiaPago {
+    +pagar(monto: double): void
+}
+
+class PagoTransferenciaBancaria implements EstrategiaPago {
+    +pagar(monto: double): void
+}
+
+' Relaciones de clases
+Cliente --> Pedido
+Administrador --> Producto
+Pedido --> Producto
+Pedido --> Descuento
+Administrador --> HistorialVentas
+Cliente --> RecomendadorProductos
+Pedido --> ContextoPago
+ContextoPago --> EstrategiaPago
+
+@enduml
