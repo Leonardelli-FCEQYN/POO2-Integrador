@@ -1,9 +1,10 @@
 package edu.unam.integrador.model;
+
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.time.LocalDate;
 import java.util.List;
+
 @Entity
 @Data
 public class Pedido {
@@ -19,9 +20,26 @@ public class Pedido {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Producto> productos;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Descuento> descuentos;
+
     @ManyToOne
     private Usuario usuario;
     @OneToOne(mappedBy = "pedido")
     private DetallePedido detalle;
-    
+
+    public double calcularPrecioTotal() {
+        double total = 0;
+        for (Producto producto : productos) {
+            total += producto.getPrecio();
+        }
+        for (Descuento descuento : descuentos) {
+            total -= descuento.getValor();
+        }
+        return total;
+    }
+
+    public void agregarDescuento(Descuento descuento) {
+        descuentos.add(descuento);
+    }
 }
