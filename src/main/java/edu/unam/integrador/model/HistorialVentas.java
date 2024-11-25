@@ -3,9 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import jakarta.persistence.*;
-import lombok.Data;
-@Entity
-@Data
+
 public class HistorialVentas {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Pedido> ventas;
