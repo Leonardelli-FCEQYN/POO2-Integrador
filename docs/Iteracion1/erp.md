@@ -63,10 +63,12 @@ Para la arquitectura de desarollo del sistema, se utilizará una arquitectura po
 >
 > **Tecnologías:**
 >
-> El Stack para el desarrollo del integrador es el siguiente:
-> + IDEs y editores de texto: VS Code y Apache NetBeans
-> + Lenguaje de programación: Java
-> + Base de Datos: PostreSQL
-> + Framework: Spring Boot
-> + Persistencia: Jakarta Persistence
+> Las tecnologías seleccionadas para el desarrollo del integrador son las siguiente:
+> + IDEs y editores de texto: VS Code
+> + Lenguaje de programación: Java 17
+> + Base de Datos: PostreSQL 16.3
+> + Gestor de proyectos: Maven
+> + Framework: Spring Boot 3.4.0
+> + Persistencia: Jakarta Persistence (Hibernate)
+> + Front-End: Thymeleaf con Bootstrap 5.
 ---
