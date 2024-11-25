@@ -31,12 +31,12 @@ public class Cliente extends Usuario{
         }
     }
 
-    public Pedido realizarCompra() {
+    /*public Pedido realizarCompra() {
         Pedido pedido = new Pedido(carrito);
         carrito.clear();
         System.out.println("Compra realizada. Pedido generado.");
         return pedido;
-    }
+    }*/
 
     public double verTotalConDescuentos() {
         double total = 0;
