@@ -1,7 +1,10 @@
 package edu.unam.integrador.model;
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Data;
-@MappedSuperclass
+
+@Entity
 @Data
 public abstract class Usuario {
     @Id
@@ -9,24 +12,18 @@ public abstract class Usuario {
     private Long id;
 
     private String nombre;
-    private String correo;
-    private String contraseña;
+    private String email;
+    private String telefono;
+    private String direccion;
+    private TipoUsuario tipo;
+    private String username;
+    private String password;
 
-    public boolean iniciarSesion(String correo, String contraseña) {
-        if (this.correo.equals(correo) && this.contraseña.equals(contraseña)) {
-            System.out.println("Inicio de sesión exitoso.");
-            return true;
-        } else {
-            System.out.println("Correo o contraseña incorrectos.");
-            return false;
-        }
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Producto> productos;
 
-    public void recuperarContraseña(String correo) {
-        if (this.correo.equals(correo)) {
-            System.out.println("Se ha enviado un enlace para recuperar la contraseña al correo: " + correo);
-        } else {
-            System.out.println("Correo no encontrado.");
-        }
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<Pedido> pedidos;
+    
+   
 }

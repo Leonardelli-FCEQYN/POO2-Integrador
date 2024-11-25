@@ -11,10 +11,14 @@ public class Producto {
     private Long id;
 
     private String nombre;
+    private String categoria;
     private String descripcion;
+    private String imagen;
     private double precio;
     private int stock;
-    private String categoria;
     @ElementCollection
     private List<String> palabrasClave;
+
+    @ManyToOne
+    private Usuario usuario;
 }
