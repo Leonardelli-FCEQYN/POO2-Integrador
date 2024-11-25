@@ -3,9 +3,7 @@ import java.util.List;
 import jakarta.persistence.*;
 @Entity
 public class Administrador extends Usuario{
-    public Administrador(Long id, String nombre, String correo, String contraseña) {
-        super(id, nombre, correo, contraseña);
-    }
+    
     public void agregarProducto(Producto producto) {
         System.out.println("Producto agregado al catálogo: " + producto.getNombre());
     }

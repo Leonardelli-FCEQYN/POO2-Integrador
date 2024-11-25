@@ -1,6 +1,8 @@
 package edu.unam.integrador.model;
 import jakarta.persistence.*;
+import lombok.Data;
 @MappedSuperclass
+@Data
 public abstract class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -9,25 +11,6 @@ public abstract class Usuario {
     private String nombre;
     private String correo;
     private String contraseña;
-
-    public Usuario(Long id, String nombre, String correo, String contraseña) {
-        this.id = id;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.contraseña = contraseña;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
 
     public boolean iniciarSesion(String correo, String contraseña) {
         if (this.correo.equals(correo) && this.contraseña.equals(contraseña)) {

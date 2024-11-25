@@ -1,8 +1,11 @@
 package edu.unam.integrador.model;
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 @Entity
+@Data
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,39 +16,7 @@ public class Pedido {
     
     private double precioTotal;
     private List<Descuento> descuentos;
-    private String estado;
-
-    public Pedido(List<Producto> productos) {
-        this.id = System.currentTimeMillis();
-        this.productos = new ArrayList<>(productos);
-        this.descuentos = new ArrayList<>();
-        this.precioTotal = calcularPrecioTotal();
-        this.estado = "Pendiente";
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public List<Producto> getProductos() {
-        return productos;
-    }
-
-    public double getPrecioTotal() {
-        return precioTotal;
-    }
-
-    public List<Descuento> getDescuentos() {
-        return descuentos;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
+    private String estado = "Pendiente";
 
     public double calcularPrecioTotal() {
         double total = 0;

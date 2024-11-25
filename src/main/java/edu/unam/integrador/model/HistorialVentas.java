@@ -3,16 +3,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import jakarta.persistence.*;
+import lombok.Data;
 @Entity
+@Data
 public class HistorialVentas {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Pedido> ventas;
-    public HistorialVentas() {
-        this.ventas = new ArrayList<>();
-    }
-    public List<Pedido> getVentas() {
-        return ventas;
-    }
+    
     public void registrarVenta(Pedido pedido) {
         ventas.add(pedido);
         System.out.println("Pedido registrado en el historial: " + pedido.getId());

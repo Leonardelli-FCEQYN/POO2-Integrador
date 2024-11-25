@@ -1,6 +1,8 @@
 package edu.unam.integrador.model;
 import jakarta.persistence.*;
+import lombok.Data;
 @Entity
+@Data
 public class Descuento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -8,31 +10,4 @@ public class Descuento {
     
     private String descripcion;
     private double valor;
-
-    public Descuento(Long id, String descripcion, double valor) {
-        this.id = id;
-        this.descripcion = descripcion;
-        this.valor = valor;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    @Override
-    public String toString() {
-        return "Descuento{" +
-                "id=" + id +
-                ", descripcion='" + descripcion + '\'' +
-                ", valor=" + valor +
-                '}';
-    }
 }

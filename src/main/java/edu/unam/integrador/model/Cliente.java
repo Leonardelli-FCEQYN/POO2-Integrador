@@ -6,12 +6,7 @@ import java.util.List;
 @Entity
 public class Cliente extends Usuario{
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Producto> carrito;
-
-    public Cliente(Long id, String nombre, String correo, String contraseña) {
-        super(id, nombre, correo, contraseña);
-        this.carrito = new ArrayList<>();
-    }
+    private List<Producto> carrito = new ArrayList<>();
 
 
     public List<Producto> buscarProducto(String palabraClave, String categoria) {
