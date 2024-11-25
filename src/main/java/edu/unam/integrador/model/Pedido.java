@@ -18,7 +18,6 @@ public class Pedido {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Producto> productos;
-    private List<Descuento> descuentos;
 
     @ManyToOne
     private Usuario usuario;
