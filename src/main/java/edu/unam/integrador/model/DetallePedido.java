@@ -8,6 +8,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 
+/**
+ * Representa el detalle de un pedido.
+ */
 @Entity
 @Data
 public class DetallePedido {

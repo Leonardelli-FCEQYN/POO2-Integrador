@@ -5,6 +5,9 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Representa un pedido realizado por un usuario.
+ */
 @Entity
 @Data
 public class Pedido {
@@ -28,6 +31,10 @@ public class Pedido {
     @OneToOne(mappedBy = "pedido")
     private DetallePedido detalle;
 
+    /**
+     * Calcula el precio total del pedido, teniendo en cuenta los productos y los descuentos.
+     * @return el precio total del pedido.
+     */
     public double calcularPrecioTotal() {
         double total = 0;
         for (Producto producto : productos) {
@@ -39,6 +46,10 @@ public class Pedido {
         return total;
     }
 
+    /**
+     * Agrega un descuento al pedido.
+     * @param descuento el descuento a agregar.
+     */
     public void agregarDescuento(Descuento descuento) {
         descuentos.add(descuento);
     }
