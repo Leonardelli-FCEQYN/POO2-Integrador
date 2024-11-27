@@ -39,31 +39,31 @@
 > **Bocetos de la interfaz de usuario:**
 > 
 > **Wireframe de Inicio**
->![Wireframe1](/out/docs/Iteracion1/Wireframe/PantalladeInicio.png)
+>![Wireframe1](/out/docs/Iteracion1/wireframe/PantalladeInicio.png)
 >
 > **Wireframe de Catálogo de Productos**
->![Wireframe2](/out/docs/Iteracion1/Wireframe/CatalogodeProductos.png)
+>![Wireframe2](/out/docs/Iteracion1/wireframe/CatalogodeProductos.png)
 >
 > **Wireframe de Detalle de Producto**
->![Wireframe3](/out/docs/Iteracion1/wWireframe/DetalledelProducto.png)
+>![Wireframe3](/out/docs/Iteracion1/wireframe/DetalledelProducto.png)
 >
 > **Wireframe de Carrito de Compras**
->![Wireframe4](/out/docs/Iteracion1/Wireframe/CarritodeCompras.png)
+>![Wireframe4](/out/docs/Iteracion1/wireframe/CarritodeCompras.png)
 > 
 > **Wireframe de Confirmación de Compra** 
->![Wireframe5](/out/docs/Iteracion1/Wireframe/Confirmacióndecompra.png) 
+>![Wireframe5](/out/docs/Iteracion1/wireframe/Confirmacióndecompra.png) 
 > 
 > **Wireframe de Registración** 
->![Wireframe6](/out/docs/Iteracion1/Wireframe/Registración.png)
+>![Wireframe6](/out/docs/Iteracion1/wireframe/Registración.png)
 > 
 > **Wireframe de Recuperación de Contraseña**
->![Wireframe7](/out/docs/Iteracion1/Wireframe/OlvidarContraseña.png) 
+>![Wireframe7](/out/docs/Iteracion1/wireframe/OlvidarContraseña.png) 
 > 
 > **Wireframe de Inicio de Sesión**
->![Wireframe8](/out/docs/Iteracion1/Wireframe/IniciarSesión.png) 
+>![Wireframe8](/out/docs/Iteracion1/wireframe/IniciarSesión.png) 
 > 
 > **Wireframe de Panel de Administración** 
->![Wireframe9](/out/docs/Iteracion1/Wireframe/PaneldeAdministración.png)
+>![Wireframe9](/out/docs/Iteracion1/wireframe/PaneldeAdministración.png)
 
 --- 
 
