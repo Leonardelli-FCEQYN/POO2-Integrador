@@ -45,7 +45,7 @@
 >![Wireframe2](/out/docs/Iteracion1/Wireframe/CatalogodeProductos.png)
 >
 > **Wireframe de Detalle de Producto**
->![Wireframe3](/out/docs/Iteracion1/Wireframe/DetalledelProducto.png)
+>![Wireframe3](/out/docs/Iteracion1/wWireframe/DetalledelProducto.png)
 >
 > **Wireframe de Carrito de Compras**
 >![Wireframe4](/out/docs/Iteracion1/Wireframe/CarritodeCompras.png)
