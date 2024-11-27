@@ -41,39 +41,40 @@
 > **Wireframe de Inicio**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Pantalla_de_Inicio.png)
-> 
+ 
 > **Wireframe de Catálogo de Productos**
-> 
+>
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Catalogo_de_Productos.png)
-> 
+ 
 > **Wireframe de Detalle de Producto**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Detalle_del_Producto.png)
-> 
+ 
 > **Wireframe de Carrito de Compras**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Carrito_de_Compras.png)
-> 
+ 
 > **Wireframe de Confirmación de Compra**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Confirmación_de_compra.png)
-> 
+ 
 > **Wireframe de Registración**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Registración.png)
->  
+  
 > **Wireframe de Recuperación de Contraseña**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Olvidar_Contraseña.png)
-> 
+ 
 > **Wireframe de Inicio de Sesión**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Iniciar_Sesión.png)
-> 
+ 
 > **Wireframe de Panel de Administración**
 > 
 >![Wireframe](/out/docs/Iteracion1/Wireframe/Panel_De_Administración.png)
-> 
+
+--- 
 >
 > **Casos de uso:**
 >
