@@ -6,12 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 /**
  * Representa el detalle de un pedido.
  */
 @Entity
+@Table(name="detalles_pedidos")
 @Data
 public class DetallePedido {
 

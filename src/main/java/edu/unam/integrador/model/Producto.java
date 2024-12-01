@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.util.List;
 @Entity
+@Table(name="productos")
 @Data
 public class Producto {
     @Id

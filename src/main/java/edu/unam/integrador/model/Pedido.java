@@ -9,6 +9,7 @@ import java.util.List;
  * Representa un pedido realizado por un usuario.
  */
 @Entity
+@Table(name="pedidos")
 @Data
 public class Pedido {
     @Id
