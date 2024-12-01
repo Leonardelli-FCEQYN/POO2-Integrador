@@ -24,6 +24,21 @@ public abstract class Usuario {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
     private List<Pedido> pedidos;
+
+    public Usuario(Long id, String nombre, String email, String telefono, String direccion, TipoUsuario tipo,
+            String username, String password) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.tipo = tipo;
+        this.username = username;
+        this.password = password;
+    }
     
+    public Usuario(){
+        
+    }
    
 }

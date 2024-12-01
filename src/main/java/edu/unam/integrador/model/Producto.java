@@ -14,8 +14,8 @@ public class Producto {
     private String categoria;
     private String descripcion;
     private String imagen;
-    private double precio;
     private int stock;
+    private double precio;
     @ElementCollection
     private List<String> palabrasClave;
 

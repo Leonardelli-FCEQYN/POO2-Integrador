@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* El contenedor ocupa todo el espacio disponible */
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer al final */
+    padding: 0.5rem;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+table {
+    margin-bottom: 0; /* Evita márgenes adicionales debajo de la tabla */
+}
