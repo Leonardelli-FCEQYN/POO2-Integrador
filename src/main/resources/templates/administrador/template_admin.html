@@ -20,16 +20,20 @@
 <body>
   <!-- Navigation -->
   <div th:fragment="header">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" th:href="@{/administrador}">Ecologic Store</a>
+
         <form class="d-flex" method="post" action="#">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" name="nombre" autocomplete="off">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
@@ -44,6 +48,7 @@
         </div>
       </div>
     </nav>
+
   </div>
 
   <!-- Footer -->
