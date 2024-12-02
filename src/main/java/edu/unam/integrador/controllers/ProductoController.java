@@ -1,12 +1,16 @@
 package edu.unam.integrador.controllers;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.unam.integrador.model.Producto;
@@ -39,6 +43,24 @@ public class ProductoController {
         Usuario u = new Usuario(Long.valueOf(1), "", "", "", "", "", "", "");
         producto.setUsuario(u);
         productoService.createProducto(producto);
+        return "redirect:/productos";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Long id, Model model){
+        Producto producto = new Producto();
+        Optional<Producto> optionalProducto = productoService.getProducto(id);
+        producto = optionalProducto.get();
+
+        LOGGER.info("El producto buscado es: {}", producto);
+        model.addAttribute("producto", producto);
+        
+        return "productos/edit";
+    };
+
+    @PostMapping("/update")
+    public String update(Producto producto){
+        productoService.updateProducto(producto);
         return "redirect:/productos";
     }
 }

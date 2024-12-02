@@ -41,5 +41,12 @@ public class Usuario {
     public Usuario(){
         
     }
+
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", telefono=" + telefono
+                + ", direccion=" + direccion + ", tipo=" + tipo + ", username=" + username + ", password=" + password
+                + ", productos=" + productos + ", pedidos=" + pedidos + "]";
+    }
    
 }

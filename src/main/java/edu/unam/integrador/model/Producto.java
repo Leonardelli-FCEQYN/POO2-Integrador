@@ -22,4 +22,12 @@ public class Producto {
 
     @ManyToOne
     private Usuario usuario;
+
+    @Override
+    public String toString() {
+        return "Producto [id=" + id + ", nombre=" + nombre + ", categoria=" + categoria + ", descripcion=" + descripcion
+                + ", imagen=" + imagen + ", stock=" + stock + ", precio=" + precio + "]";
+    }
+
+    
 }
