@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    /* Estilos adicionales */
+    .product-img {
+      width: 50px;
+      height: 50px;
+      background-color: #e9ecef;
+      border: 1px solid #dee2e6;
+    }
+
+    .section-container {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      border-top: 1px solid #dee2e6;
+    }
+
+    .total-row {
+      font-weight: bold;
+    }
+
+    .btn-delete {
+      background: none;
+      border: none;
+      color: red;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    input[type="text"] {
+      text-align: center;
+    }
+
+    .form-check-label {
+      margin-left: 0.5rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header original -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Ecologic Store</a>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-success" type="submit">Buscar</button>
+        </form>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Carrito</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido del carrito -->
+  <div class="container mt-4">
+    <h3 class="mb-4">Carrito de Compras</h3>
+
+    <!-- Productos -->
+    <div class="section-container">
+      <div class="section-title">Productos</div>
+      <hr>
+      <div class="row align-items-center mb-3">
+        <div class="col-2">
+          <div class="product-img"></div>
+        </div>
+        <div class="col-4">
+          <p>Nombre del Producto (Cantidad X)</p>
+        </div>
+        <div class="col-3 d-flex">
+          <button class="btn btn-outline-secondary btn-sm">-</button>
+          <input type="text" class="form-control form-control-sm mx-1" value="1" style="width: 50px;">
+          <button class="btn btn-outline-secondary btn-sm">+</button>
+        </div>
+        <div class="col-2">
+          <p>$X,XX</p>
+        </div>
+        <div class="col-1">
+          <button class="btn-delete">&times;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opciones de envío -->
+    <div class="section-container">
+      <div class="section-title">Envío</div>
+      <hr>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="envio" id="domicilio" checked>
+        <label class="form-check-label" for="domicilio"> Enviar a Domicilio </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="envio" id="retiro">
+        <label class="form-check-label" for="retiro"> Retirar en Punto de Entrega </label>
+      </div>
+    </div>
+
+    <!-- Métodos de pago -->
+    <div class="section-container">
+      <div class="section-title">Método de Pago</div>
+      <hr>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="metodo1" checked>
+        <label class="form-check-label" for="metodo1"> Método de Pago </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="metodo2">
+        <label class="form-check-label" for="metodo2"> Método de Pago </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="metodo3">
+        <label class="form-check-label" for="metodo3"> Método de Pago </label>
+      </div>
+    </div>
+
+    <!-- Total -->
+    <div class="mt-4">
+      <div class="d-flex justify-content-between total-row">
+        <p>Total:</p>
+        <p>$XX,XX</p>
+      </div>
+      <button class="btn btn-primary w-100">Comprar</button>
+    </div>
+  </div>
+
+  <!-- Footer original -->
+  <footer class="bg-dark text-white text-center py-3">
+    Copyright © Eco Store 2024
+  </footer>
+</body>
+
+</html>
