@@ -53,15 +53,6 @@ public class ProductoController {
             String nombreImagen = guardarImagenService.saveImage(file);
             producto.setImagen(nombreImagen);
         } else {
-            if (file.isEmpty()) { // Cuando editamos un producto PERO no cambiamos de imagen
-                Producto p = new Producto();
-                p=productoService.getProducto(producto.getId()).get();
-                producto.setImagen(p.getImagen());
-            } else {
-                String nombreImagen = guardarImagenService.saveImage(file);
-                producto.setImagen(nombreImagen);
-            }
-
         }
 
         productoService.createProducto(producto);
@@ -81,13 +72,41 @@ public class ProductoController {
     };
 
     @PostMapping("/update")
-    public String update(Producto producto){
+    public String update(Producto producto, @RequestParam("img") MultipartFile file) throws IOException{
+        
+        if (file.isEmpty()) { // Cuando editamos un producto PERO no cambiamos de imagen
+            Producto p = new Producto();
+            p=productoService.getProducto(producto.getId()).get();
+            producto.setImagen(p.getImagen());
+        } else { // Cuando editamos el producto Y TAMBIÉN la imágen.
+
+            Producto p = new Producto();
+            p = productoService.getProducto(producto.getId()).get();
+
+            // Eliminamos la imagen cuando NO sea la imagen por defecto.
+            if (!(p.getImagen().equals("default.jpg"))){
+                guardarImagenService.deleteImage(p.getImagen());
+            }
+
+            String nombreImagen = guardarImagenService.saveImage(file);
+            producto.setImagen(nombreImagen);
+        }
+        
         productoService.updateProducto(producto);
         return "redirect:/productos";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
+        
+        Producto p = new Producto();
+        p = productoService.getProducto(id).get();
+
+        // Eliminamos la imagen cuando NO sea la imagen por defecto.
+        if (!(p.getImagen().equals("default.jpg"))){
+            guardarImagenService.deleteImage(p.getImagen());
+        }
+
         productoService.deleteProductoById(id);
         return "redirect:/productos";
     }
