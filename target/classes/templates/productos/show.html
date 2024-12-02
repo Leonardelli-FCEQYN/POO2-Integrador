@@ -36,18 +36,18 @@
         <tr>
           <th scope="col">Nombre</th>
           <th scope="col">Descripción</th>
-          <th scope="col">Inventario</th>
+          <th scope="col">Stock</th>
           <th scope="col">Precio</th>
           <th scope="col">Acción</th>
           <th scope="col">Acción</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Producto 1</td>
-          <td>Descripción del producto 1</td>
-          <td>10</td>
-          <td>$100</td>
+        <tr th:each="p:${productos}">
+          <td th:text="${p.nombre}"></td>
+          <td th:text="${p.descripcion}"></td>
+          <td th:text="${p.stock}"></td>
+          <td th:text="${p.precio}"></td>
           <td><a class="btn btn-warning" href="#">Editar</a></td>
           <td><a class="btn btn-danger" href="#">Eliminar</a></td>
         </tr>
