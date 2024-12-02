@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.unam.integrador.model.Producto;
@@ -61,6 +60,12 @@ public class ProductoController {
     @PostMapping("/update")
     public String update(Producto producto){
         productoService.updateProducto(producto);
+        return "redirect:/productos";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id){
+        productoService.deleteProductoById(id);
         return "redirect:/productos";
     }
 }
