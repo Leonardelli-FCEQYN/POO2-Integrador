@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.unam.integrador.model.Producto;
-import edu.unam.integrador.model.TipoUsuario;
 import edu.unam.integrador.model.Usuario;
 import edu.unam.integrador.services.ProductoService;
 
@@ -35,7 +34,7 @@ public class ProductoController {
     @PostMapping("/save")
     public String save(Producto producto){
         LOGGER.info("Este es el producto guardado: {}", producto);
-        Usuario u = new Usuario(Long.valueOf(1), "", "", "", "", TipoUsuario.ADMINISTRADOR, "", ""){};
+        Usuario u = new Usuario(Long.valueOf(1), "", "", "", "", "", "", ""){};
         producto.setUsuario(u);
         productoService.createProducto(producto);
         return "redirect:/productos";
