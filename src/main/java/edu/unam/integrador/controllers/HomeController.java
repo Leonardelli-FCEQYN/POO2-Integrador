@@ -124,4 +124,10 @@ public class HomeController {
         
         return "/usuario/carrito";
     }
+
+    @GetMapping("/pedido")
+    public String pedido(){
+        return "usuario/resumenpedido";
+    }
+
 }
