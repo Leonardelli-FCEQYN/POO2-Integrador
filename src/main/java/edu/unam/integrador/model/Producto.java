@@ -1,8 +1,6 @@
 package edu.unam.integrador.model;
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.util.List;
 @Entity
 @Table(name="productos")
 @Data
@@ -17,8 +15,6 @@ public class Producto {
     private String imagen;
     private int stock;
     private double precio;
-    @ElementCollection
-    private List<String> palabrasClave;
 
     @ManyToOne
     private Usuario usuario;

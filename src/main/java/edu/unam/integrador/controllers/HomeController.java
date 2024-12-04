@@ -20,7 +20,6 @@ import edu.unam.integrador.model.Pedido;
 import edu.unam.integrador.model.Producto;
 import edu.unam.integrador.model.Usuario;
 import edu.unam.integrador.services.UsuarioService;
-import edu.unam.integrador.services.DetallePedidoService;
 import edu.unam.integrador.services.PedidoService;
 import edu.unam.integrador.services.ProductoService;
 
@@ -37,13 +36,11 @@ public class HomeController {
     private UsuarioService usuarioService;
     @Autowired
     private PedidoService pedidoService;
-    @Autowired
-    private DetallePedidoService detallePedidoService;
 
     //Para almacenar los detalles del pedido
-    ArrayList<DetallePedido> detalles = new ArrayList<>();
+    private ArrayList<DetallePedido> detalles = new ArrayList<>();
     //Datos del pedido
-    Pedido pedido = new Pedido();
+    private Pedido pedido = new Pedido();
 
     @GetMapping("")
     public String home(Model model){
@@ -63,6 +60,7 @@ public class HomeController {
 
     @PostMapping("/cart")
     public String addCart(@RequestParam long id, @RequestParam int cantidad, Model model){
+        
         DetallePedido detallePedido = new DetallePedido();
         Producto producto = new Producto();
         double subTotal=0;
@@ -88,7 +86,7 @@ public class HomeController {
             for (DetallePedido dp : detalles) {
                 if (dp.getProducto().getId()==id) {
                     dp.setCantidad(dp.getCantidad()+cantidad);
-                    dp.setTotal(producto.getPrecio()*dp.getCantidad());  
+                    dp.setTotal(producto.getPrecio()*dp.getCantidad());
                 }
             }
         }
@@ -154,20 +152,24 @@ public class HomeController {
         pedido.setFechaCreacion(fechaCreacion);
         pedido.setNumero(pedidoService.generarNumeroPedido());
 
-        //Usuario
-        Usuario usuario = usuarioService.findById(Long.valueOf(1)).get();
+        // Usuario
+        Usuario usuario = usuarioService.findById(Long.valueOf(1)).orElse(null);
+        if (usuario == null) {
+            throw new IllegalStateException("Usuario no encontrado");
+        }
         pedido.setUsuario(usuario);
-        pedidoService.save(pedido);
 
-        //Guardar detalles
+        // Asociar detalles al pedido
         for (DetallePedido dp : detalles) {
-            dp.setPedido(pedido);
-            detallePedidoService.save(dp);
+            pedido.addDetalle(dp);
         }
 
-        //Limpiar detalles y pedido
-        pedido = new Pedido();
+        // Guarda el pedido (y automáticamente los detalles
+        pedidoService.save(pedido);
+
+        // Limpiar detalles y pedido
         detalles.clear();
+        pedido = new Pedido();
 
         return "redirect:/";
     }

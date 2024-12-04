@@ -3,6 +3,7 @@ package edu.unam.integrador.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,13 +23,20 @@ public class Pedido {
     private double subTotal;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Producto> productos;
-
-    @OneToMany(cascade = CascadeType.ALL)
     private List<Descuento> descuentos;
 
     @ManyToOne
     private Usuario usuario;
-    @OneToOne(mappedBy = "pedido")
-    private DetallePedido detalle;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido")
+    private List<DetallePedido> detalle = new ArrayList<>();
+
+    public void addDetalle(DetallePedido detallePedido) {
+        if (detalle == null) {
+            detalle = new ArrayList<>();
+        }
+        detalle.add(detallePedido);
+        detallePedido.setPedido(this); // Sincronización bidireccional
+    }
+    
 }
