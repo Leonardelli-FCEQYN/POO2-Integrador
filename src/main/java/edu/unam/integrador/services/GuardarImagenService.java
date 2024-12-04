@@ -29,8 +29,6 @@ public class GuardarImagenService {
         String ruta="images//";
         File file = new File(ruta+nombreImagen);
         file.delete();
-        
-
     }
 
 }

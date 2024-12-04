@@ -61,7 +61,7 @@
     <!-- Opciones de envío -->
     <div class="card mb-4">
       <div class="card-body">
-        <h3>Envío</h3>
+        <h4>Envío</h4>
         <form>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="envio" id="domicilio" checked>
@@ -78,7 +78,7 @@
     <!-- Métodos de pago -->
     <div class="card mb-4">
       <div class="card-body">
-        <h3>Métodos de Pago</h3>
+        <h4>Métodos de Pago</h4>
         <form>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="metodo1" checked>
@@ -98,11 +98,16 @@
 
     <!-- Total, Ver Pedido y Comprar -->
     <div class="d-flex flex-column align-items-end mb-4">
-      <div class="card text-center mb-3" style="width: 18rem;">
+      <div class="card mb-3" style="width: 18rem;">
         <div class="card-body">
-          <h2 class="card-title">TOTAL</h2>
-          <h5>$ 20</h5>
-          <a href="resumenorden.html" class="btn btn-dark">Ver Pedido</a>
+          <h3 class="card-title">Totales del Carrito</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Subtotal: </li>
+              <li class="list-group-item">Envio: </li>
+              <li class="list-group-item">Descuento: </li>
+              <h5 class="list-group-item">TOTAL: </h5>
+              <a href="resumenorden.html" class="btn btn-dark">Ver Pedido</a>
+            </ul>
         </div>
       </div>
       <button class="btn btn-dark">Comprar</button>

@@ -10,5 +10,4 @@ public class ResourceWebConfiguration implements WebMvcConfigurer {
     public void addResourceHandlers(@SuppressWarnings("null") ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/images/**").addResourceLocations("file:images/");
     }
-
 }
