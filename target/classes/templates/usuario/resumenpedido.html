@@ -46,9 +46,9 @@
               <h5 class="card-title">
                 DATOS DEL PEDIDO
               </h5>
-              <h6>Nombre: </h6>
-              <h6 >Correo: </h6>
-              <h6 >Dirección</h6>
+              <h6 th:text="'Nombre: '+${usuario.nombre}"></h6>
+              <h6 th:text="'Correo: '+${usuario.email}"></h6>
+              <h6 th:text="'Dirección: '+${usuario.direccion}"></h6>
 
               <h5 class="card-title">
                 PRODUCTOS
@@ -64,11 +64,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                     <td >Nombre</td>
-                     <td >Precio</td>
-                     <td>Cantidad</td>
-                     <td >Subtotal</td>
+                    <tr th:each="dpedido:${cart}">
+                     <td th:text="${dpedido.nombre}"></td>
+                     <td th:text="${dpedido.precio}"></td>
+                     <td th:text="${dpedido.cantidad}"></td>
+                     <td th:text="${dpedido.total}"></td>
 
                    </tr>
                  </tbody>
@@ -83,7 +83,7 @@
           <h3 class="card-title">Resumen Pedido</h3>
 
           <ul class="list-group">
-            <li class="list-group-item">Subtotal:</li>
+            <li class="list-group-item" th:text="'Subtotal:' + ${pedido.subTotal}"></li>
             <li class="list-group-item">Envio: </li>
             <li class="list-group-item">Descuento: </li>
             <h5 class="list-group-item">TOTAL: </h5>

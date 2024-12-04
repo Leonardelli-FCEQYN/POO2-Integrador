@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import edu.unam.integrador.model.DetallePedido;
 import edu.unam.integrador.model.Pedido;
 import edu.unam.integrador.model.Producto;
+import edu.unam.integrador.model.Usuario;
+import edu.unam.integrador.services.IUsuarioService;
 import edu.unam.integrador.services.ProductoService;
 
 
@@ -28,6 +30,8 @@ public class HomeController {
 
     @Autowired
     private ProductoService productoService;
+    @Autowired
+    private IUsuarioService usuarioService;
 
     //Para almacenar los detalles del pedido
     ArrayList<DetallePedido> detalles = new ArrayList<>();
@@ -126,7 +130,12 @@ public class HomeController {
     }
 
     @GetMapping("/pedido")
-    public String pedido(){
+    public String pedido(Model model){
+        
+        Usuario usuario = usuarioService.findById(Long.valueOf(1)).get();
+        model.addAttribute("cart", detalles);
+        model.addAttribute("pedido", pedido);
+        model.addAttribute("usuario", usuario);
         return "usuario/resumenpedido";
     }
 

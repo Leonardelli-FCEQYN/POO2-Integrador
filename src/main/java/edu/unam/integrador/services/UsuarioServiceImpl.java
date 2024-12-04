@@ -5,13 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.unam.integrador.model.Usuario;
-import edu.unam.integrador.repositories.IUsuarioRepository;
+import edu.unam.integrador.repositories.UsuarioRepository;
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
     @Autowired
-    private IUsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
+	
     @Override
-	public Optional<Usuario> findById(Integer id) {
+	public Optional<Usuario> findById(Long id) {
 		return usuarioRepository.findById(id);
 	}
 
