@@ -1,5 +1,6 @@
 package edu.unam.integrador.controllers;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -18,7 +19,9 @@ import edu.unam.integrador.model.DetallePedido;
 import edu.unam.integrador.model.Pedido;
 import edu.unam.integrador.model.Producto;
 import edu.unam.integrador.model.Usuario;
-import edu.unam.integrador.services.IUsuarioService;
+import edu.unam.integrador.services.UsuarioService;
+import edu.unam.integrador.services.DetallePedidoService;
+import edu.unam.integrador.services.PedidoService;
 import edu.unam.integrador.services.ProductoService;
 
 
@@ -31,7 +34,11 @@ public class HomeController {
     @Autowired
     private ProductoService productoService;
     @Autowired
-    private IUsuarioService usuarioService;
+    private UsuarioService usuarioService;
+    @Autowired
+    private PedidoService pedidoService;
+    @Autowired
+    private DetallePedidoService detallePedidoService;
 
     //Para almacenar los detalles del pedido
     ArrayList<DetallePedido> detalles = new ArrayList<>();
@@ -137,6 +144,32 @@ public class HomeController {
         model.addAttribute("pedido", pedido);
         model.addAttribute("usuario", usuario);
         return "usuario/resumenpedido";
+    }
+
+    @GetMapping("/savePedido")
+    public String savePedido(){
+        
+        //Fecha de creación
+        LocalDate fechaCreacion = LocalDate.now();
+        pedido.setFechaCreacion(fechaCreacion);
+        pedido.setNumero(pedidoService.generarNumeroPedido());
+
+        //Usuario
+        Usuario usuario = usuarioService.findById(Long.valueOf(1)).get();
+        pedido.setUsuario(usuario);
+        pedidoService.save(pedido);
+
+        //Guardar detalles
+        for (DetallePedido dp : detalles) {
+            dp.setPedido(pedido);
+            detallePedidoService.save(dp);
+        }
+
+        //Limpiar detalles y pedido
+        pedido = new Pedido();
+        detalles.clear();
+
+        return "redirect:/";
     }
 
 }

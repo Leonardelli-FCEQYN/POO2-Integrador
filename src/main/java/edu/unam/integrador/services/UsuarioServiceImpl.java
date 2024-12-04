@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import edu.unam.integrador.model.Usuario;
 import edu.unam.integrador.repositories.UsuarioRepository;
 @Service
-public class UsuarioServiceImpl implements IUsuarioService {
+public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 	

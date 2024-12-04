@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import edu.unam.integrador.services.IUsuarioService;
+import edu.unam.integrador.services.UsuarioService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/usuario")
 public class LoginController {
     @Autowired
-    private IUsuarioService usuarioService;
+    private UsuarioService usuarioService;
     
     @GetMapping("/login")
     public String mostrarLogin() {
