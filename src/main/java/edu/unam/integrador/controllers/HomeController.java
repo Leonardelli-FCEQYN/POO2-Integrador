@@ -67,7 +67,20 @@ public class HomeController {
         detallePedido.setTotal(producto.getPrecio() * cantidad);
         detallePedido.setProducto(producto);
 
-        detalles.add(detallePedido);
+        //Validación para que el producto no se añada dos veces
+        long idProducto = producto.getId();
+        boolean ingresado = detalles.stream().anyMatch(p->p.getProducto().getId()==idProducto);
+
+        if (!ingresado) { //Si no está en la lista de detalles, lo añadimos
+            detalles.add(detallePedido);
+        } else { //Si está en la lista de detalles, obtenemos actualizamos la cantidad y el subtotal.
+            for (DetallePedido dp : detalles) {
+                if (dp.getProducto().getId()==id) {
+                    dp.setCantidad(dp.getCantidad()+cantidad);
+                    dp.setTotal(producto.getPrecio()*dp.getCantidad());  
+                }
+            }
+        }
 
         subTotal=detalles.stream().mapToDouble(dt->dt.getTotal()).sum();
 
@@ -101,5 +114,14 @@ public class HomeController {
         model.addAttribute("pedido", pedido);
 
         return "usuario/carrito";
+    }
+
+    @GetMapping("/getCart")
+    public String getCart(Model model){
+        
+        model.addAttribute("cart", detalles);
+        model.addAttribute("pedido", pedido);
+        
+        return "/usuario/carrito";
     }
 }
