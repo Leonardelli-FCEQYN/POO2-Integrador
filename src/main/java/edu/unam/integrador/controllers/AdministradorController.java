@@ -20,7 +20,7 @@ public class AdministradorController {
     @GetMapping("")
     public String home(Model model){
         
-        ArrayList<Producto> productos = productoService.getAllProductos();
+        ArrayList<Producto> productos = productoService.findAllProductos();
         model.addAttribute("productos", productos);
         
         return "administrador/home";

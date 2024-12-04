@@ -22,7 +22,7 @@ public class ProductoService {
     }
     
     //Mostrar productos
-    public ArrayList<Producto> getAllProductos(){
+    public ArrayList<Producto> findAllProductos(){
         List<Producto> lista = productoRepository.findAll();
         ArrayList<Producto> listaProductos = new ArrayList<Producto>(lista);
         return listaProductos;

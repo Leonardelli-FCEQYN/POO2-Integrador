@@ -7,7 +7,4 @@ import edu.unam.integrador.model.Pedido;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
-
-
-
 }

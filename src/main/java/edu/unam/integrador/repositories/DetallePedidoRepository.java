@@ -7,5 +7,4 @@ import edu.unam.integrador.model.DetallePedido;
 
 @Repository
 public interface DetallePedidoRepository extends JpaRepository<DetallePedido, Long> {
-
 }
