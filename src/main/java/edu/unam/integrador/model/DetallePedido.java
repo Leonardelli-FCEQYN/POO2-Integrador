@@ -21,7 +21,7 @@ public class DetallePedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private String cantidad;
+    private int cantidad;
     private double precio;
     private double total;
 

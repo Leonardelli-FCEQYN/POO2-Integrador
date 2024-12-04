@@ -46,11 +46,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Producto 1</td>
-              <td>$ 10</td>
-              <td>2</td>
-              <td>$ 20</td>
+            <tr th:each="dpedido:${cart}">
+              <td th:text="${dpedido.nombre}"></td>
+              <td th:text="${dpedido.precio}"></td>
+              <td th:text="${dpedido.cantidad}"></td>
+              <td th:text="${dpedido.total}"></td>
               <td><a href="#" class="btn btn-danger">Quitar</a></td>
             </tr>
           </tbody>
@@ -102,7 +102,7 @@
         <div class="card-body">
           <h3 class="card-title">Totales del Carrito</h3>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Subtotal: </li>
+              <li class="list-group-item" th:text="'Subtotal: ' + ${pedido.subTotal}"></li>
               <li class="list-group-item">Envio: </li>
               <li class="list-group-item">Descuento: </li>
               <h5 class="list-group-item">TOTAL: </h5>
