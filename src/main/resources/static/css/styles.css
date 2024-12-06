@@ -54,3 +54,29 @@ footer {
 table {
     margin-bottom: 0; /* Evita márgenes adicionales debajo de la tabla */
 }
+
+.card {
+    width: 100%; /* Ajusta las tarjetas al contenedor */
+    max-width: 300px; /* Limita el tamaño máximo */
+    border-radius: 8px; /* Bordes redondeados */
+    height: 100%; /* Uniforma la altura de las tarjetas */
+  }
+  
+  .image-container {
+    height: 200px; /* Altura fija para el contenedor de imágenes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que las imágenes grandes sobresalgan */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Imagen ajustada al ancho del contenedor */
+    max-height: 100%; /* Imagen ajustada a la altura del contenedor */
+    object-fit: contain; /* Escala la imagen sin distorsión */
+  }
+  
+  .card-footer {
+    background-color: transparent;
+    border-top: none;
+  }

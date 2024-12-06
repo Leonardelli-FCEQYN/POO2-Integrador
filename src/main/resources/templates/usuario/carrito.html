@@ -78,19 +78,19 @@
     <!-- Métodos de pago -->
     <div class="card mb-4">
       <div class="card-body">
-        <h4>Métodos de Pago</h4>
+        <h4>Envío</h4>
         <form>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="metodo1" checked>
-            <label class="form-check-label" for="metodo1">Tarjeta de Crédito</label>
+            <input class="form-check-input" type="radio" name="metodo" id="tarjetaCredito" checked>
+            <label class="form-check-label" for="tarjetaCredito">Tarjeta de Débito</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="metodo2">
-            <label class="form-check-label" for="metodo2">Transferencia Bancaria</label>
+            <input class="form-check-input" type="radio" name="metodo" id="tarjetaDebito">
+            <label class="form-check-label" for="tarjetaDebito">Tarjeta de Crétido</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="metodo3">
-            <label class="form-check-label" for="metodo3">Pago en Efectivo</label>
+            <input class="form-check-input" type="radio" name="metodo" id="transferencia">
+            <label class="form-check-label" for="transferencia">Transferencia Bancaria</label>
           </div>
         </form>
       </div>
@@ -106,7 +106,7 @@
               <li class="list-group-item">Envio: </li>
               <li class="list-group-item">Descuento: </li>
               <h5 class="list-group-item">TOTAL: </h5>
-              <a th:href="@{/pedido}" class="btn btn-dark">Ver Pedido</a>
+              <a th:href="@{/pedido}" class="btn btn-dark">Finalizar Pedido</a>
             </ul>
         </div>
       </div>
