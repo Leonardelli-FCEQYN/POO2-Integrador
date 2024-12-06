@@ -28,17 +28,23 @@
       <h1 class="display-4">Bienvenido a Eco Store 2024</h1>
       <p class="lead">Tu tienda de productos ecológicos en línea</p>
     </header>
+    <br>
 
-    <!-- Page Features -->
-    <div class="row text-center mt-4" >
-      <div class="col-lg-3 col-md-6 mb-4" th:each="producto: ${productos}">
-        <div class="card h-100">
-          <img class="card-img-top" th:src="@{/images/{img} (img=${producto.imagen})}" alt="">
-          <div class="card-body">
-            <p class="card-text" th:text="${producto.nombre}"></p>
+    <!-- Productos -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" th:each="producto : ${productos}">
+        <div class="card h-100 shadow-sm">
+          <!-- Contenedor de imagen -->
+          <div class="image-container">
+            <img class="card-img-top" th:src="@{/images/{img} (img=${producto.imagen})}" alt="Imagen del producto">
           </div>
-          <div class="card-footer">
-            <a href="productohome.html" class="btn btn-success">Ver producto</a>
+          <!-- Contenido -->
+          <div class="card-body text-center">
+            <p class="card-text fw-bold" th:text="${producto.nombre}"></p>
+          </div>
+          <!-- Botón -->
+          <div class="card-footer bg-transparent text-center">
+            <a th:href="@{/productohome/{id} (id=${producto.id})}" class="btn btn-success">Ver producto</a>
           </div>
         </div>
       </div>

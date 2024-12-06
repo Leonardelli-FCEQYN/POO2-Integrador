@@ -28,6 +28,11 @@ public class ProductoService {
         return listaProductos;
     }
 
+    public List<Producto> find4Productos() {
+        List<Producto> productos = productoRepository.findAll();
+        return productos.stream().limit(4).toList();
+    }
+
     //Crear producto - Recibe Producto sin ID asignado. Se encarga el GeneratedValue
     public Producto createProducto(Producto producto){
         return productoRepository.save(producto);

@@ -44,7 +44,7 @@ public class HomeController {
 
     @GetMapping("")
     public String home(Model model){
-        model.addAttribute("productos", productoService.findAllProductos());
+        model.addAttribute("productos", productoService.find4Productos());
         return "usuario/home";
     }
 
